@@ -1,13 +1,13 @@
 public class FilterResult implements Iterable<sObject> {
 	private FilterQuery query;
-	private Iterable<sObject> objects;
+	private Iterable<sObject> records;
 
-	public FilterResult(FilterQuery query, Iterable<sObject> objects) {
+	public FilterResult(FilterQuery query, Iterable<sObject> records) {
 		this.query = query;
-		this.objects = objects;
+		this.records = records;
 	}
 
 	public Iterator<SObject> iterator() {
-		return new FilterResultIterator(query, objects.iterator());
+		return new FilterResultIterator(query, records.iterator());
 	}
 }
